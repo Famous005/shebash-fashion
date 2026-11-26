@@ -1,0 +1,27 @@
+# Virtual environment
+venv/
+
+# Environment secrets — NEVER commit this
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# VS Code
+.vscode/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
