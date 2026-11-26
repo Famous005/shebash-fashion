@@ -1,5 +1,3 @@
-# [Django] backend/core/settings.py
-
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -31,6 +29,8 @@ INSTALLED_APPS = [
     # Third party
     'rest_framework',
     'corsheaders',
+    # Local apps
+    'accounts', 
 ]
 
 # ============================================================
@@ -94,7 +94,7 @@ DATABASES = {
 # ============================================================
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
@@ -149,3 +149,21 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # DEFAULT PRIMARY KEY
 # ============================================================
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Custom user model
+AUTH_USER_MODEL = 'accounts.User'
+
+# ============================================================
+# JWT SETTINGS
+# ============================================================
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=12),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': False,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+}

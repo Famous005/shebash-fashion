@@ -1,0 +1,21 @@
+# Environment secrets
+.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+
+# Node (for Next.js frontend later)
+node_modules/
+.next/
+out/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

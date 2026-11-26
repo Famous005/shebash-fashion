@@ -13,7 +13,11 @@ CREATE TABLE users (
     full_name VARCHAR(150) NOT NULL,
     email VARCHAR(191) NOT NULL UNIQUE,
     phone_e164 VARCHAR(25) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    last_login TIMESTAMPTZ NULL,
+    is_superuser BOOLEAN NOT NULL DEFAULT FALSE,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
+    is_staff BOOLEAN NOT NULL DEFAULT FALSE,
     role VARCHAR(20) NOT NULL DEFAULT 'customer'
         CHECK (role IN ('customer', 'tailor_staff', 'admin')),
     preferred_currency CHAR(3) NOT NULL DEFAULT 'NGN',
