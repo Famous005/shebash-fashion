@@ -1,0 +1,131 @@
+@import "@fontsource/cormorant-garamond/400.css";
+@import "@fontsource/cormorant-garamond/500.css";
+@import "@fontsource/cormorant-garamond/600.css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+
+@import "tailwindcss";
+
+@theme {
+  --color-black:      #000000;
+  --color-green:      #1B4D2E;
+  --color-burgundy:   #7B1C2E;
+  --color-gold:       #C9A84C;
+  --color-gold-light: #E8C97A;
+  --color-gold-dim:   #8A6B28;
+  --color-white:      #FFFFFF;
+  --color-off-white:  #F5F0E8;
+  --color-charcoal:   #1A1A1A;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans:  "DM Sans", system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-green);
+  color: var(--color-white);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.gold-rule {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.btn-gold {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background-color: var(--color-gold);
+  color: var(--color-black);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-gold:hover {
+  background-color: var(--color-gold-light);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: 0.025em;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline:hover {
+  background-color: var(--color-gold);
+  color: var(--color-black);
+}
+
+.service-card {
+  background-color: var(--color-charcoal);
+  border-left: 2px solid var(--color-gold);
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+.service-card:hover {
+  border-left-color: var(--color-gold-light);
+}
+
+/* Navbar responsive visibility */
+.nav-desktop {
+  display: none;
+}
+.nav-hamburger {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+  }
+  .nav-hamburger {
+    display: none;
+  }
+}
