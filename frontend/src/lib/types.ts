@@ -39,3 +39,39 @@ export interface PaginatedResponse<T> {
   previous: string | null;
   results: T[];
 }
+
+export interface AuthUser {
+  id: number;
+  full_name: string;
+  email: string;
+  phone_e164: string | null;
+  role: "customer" | "tailor_staff" | "admin";
+  preferred_currency: string;
+  created_at: string;
+}
+
+export interface AuthTokens {
+  access: string;
+  refresh: string;
+}
+
+export interface RegisterPayload {
+  full_name: string;
+  email: string;
+  phone_e164?: string;
+  password: string;
+  password_confirm: string;
+}
+
+export interface LoginPayload {
+  login_id: string;
+  password: string;
+}
+
+export interface AuthResponse {
+  message?: string;
+  user: AuthUser;
+  tokens?: AuthTokens;
+  access?: string;
+  refresh?: string;
+}

@@ -280,7 +280,7 @@ export default function ProductDetailPage() {
                 </button>
 
                 <a
-                  href={`https://wa.me/234XXXXXXXXXX?text=Hello%20Shebash%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}`}
+                  href={`https://wa.me/2348061362600?text=Hello%20Shebash%2C%20I%20am%20interested%20in%20${encodeURIComponent(product.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-outline"

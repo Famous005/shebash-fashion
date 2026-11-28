@@ -124,6 +124,20 @@ export default function Navbar() {
           >
             Book Now
           </Link>
+          <Link
+            href="/auth/login"
+            style={{
+              fontSize: "0.875rem",
+              fontFamily: "var(--font-sans)",
+              color: "rgba(255,255,255,0.85)",
+              textDecoration: "none",
+              transition: "color 0.2s ease",
+            }}
+            onMouseEnter={e => (e.currentTarget.style.color = "#C9A84C")}
+            onMouseLeave={e => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}
+          >
+            Sign In
+          </Link>
         </nav>
 
         {/* Mobile hamburger */}
@@ -196,6 +210,31 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
           >
             Book Now
+          </Link>
+
+          <Link
+            href="/auth/register"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontFamily: "var(--font-sans)",
+              fontSize: "1rem",
+              textDecoration: "none",
+            }}
+            onClick={() => setMenuOpen(false)}
+          >
+            Register
+          </Link>
+          <Link
+            href="/auth/login"
+            style={{
+              color: "rgba(255,255,255,0.85)",
+              fontFamily: "var(--font-sans)",
+              fontSize: "1rem",
+              textDecoration: "none",
+            }}
+            onClick={() => setMenuOpen(false)}
+          >
+            Sign In
           </Link>
         </nav>
       )}
